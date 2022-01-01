@@ -38,7 +38,7 @@ class AuthController extends Controller
         // return 'yes';
         $user = User::where('email', '=', $request->email)->first();
         if(!$user || !Hash::check($request->password, $user->password)){
-            return response(['message'=> "error Bad"], 401);
+            return response(['message'=> "error Bad","st" => 401]);
         }
 
         $token = $user->createToken('myapptoken')->plainTextToken;
