@@ -6,15 +6,17 @@ import { postData } from "../utils/fetchData";
 
 const Register = () => {
   const initailState = {
-    username: "",
+    name: "",
     email: "",
     password: "",
     password_confirmation: "",
   };
+
   const [user, setUser] = useState(initailState);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUser({ user, [name]: value });
+    setUser({ ...user, [name]: value });
   };
 
   const handleClick = async (e) => {
@@ -22,8 +24,7 @@ const Register = () => {
     const res = await postData("register", user);
     console.log(res);
   };
-
-  const { username, email, password, password_confirmation } = user;
+  const { name, email, password, password_confirmation } = user;
 
   return (
     <div className=" w-full flex-col flex items-center h-[80vh] bg-slate-900">
@@ -33,10 +34,10 @@ const Register = () => {
           <div className="mb-4">
             <Label text="اسم المستخدم" elNme="name" />
             <Input
-              name="username"
+              name="name"
               type="text"
               handleChange={handleChange}
-              value={username}
+              value={name}
             />
           </div>
           <div className="mb-4">

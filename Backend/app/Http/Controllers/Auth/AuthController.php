@@ -25,10 +25,10 @@ class AuthController extends Controller
 
         $token = $user->createToken('myapptoken')->plainTextToken;
 
-        $response = [
+        $response = json([
             'user' => $user,
             'token' => $token,
-        ];
+        ]);
 
         return response($response, 201);
     }
