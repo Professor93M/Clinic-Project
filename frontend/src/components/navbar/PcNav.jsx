@@ -9,11 +9,11 @@ const NavBar = ({ isShow, toggleShow }) => {
       <div className="flex h-full  xl:max-w-6xl lg:max-w-5xl md:max-w-3xl mx-auto items-center md:justify-between sm:justify-around">
         <Logo logo="Logo" />
         <ul className="flex md:space-x-6 sm:space-x-1 capitalize justify-around">
-          <NavItem href="/" text="home" />
-          <NavItem href="/about" text="about" />
-          <NavItem href="/contact" text="contact" />
+          <NavItem href="/" text="booking" />
+          <NavItem href="/about" text="profile" />
+          {/* <NavItem href="/contact" text="contact" />
           <Dropdown text="catagories" isShow={isShow} toggleShow={toggleShow} />
-          <NavItem href="/login" text="login" />
+          <NavItem href="/login" text="login" /> */}
         </ul>
       </div>
     </div>

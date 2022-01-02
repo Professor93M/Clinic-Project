@@ -7,10 +7,12 @@ const Input = ({
   placeholder,
   value,
   handleChange,
+  id,
 }) => {
   return (
     <input
-      className={`${className} w-full rounded-lg`}
+      className={className}
+      id={id}
       type={type}
       name={name}
       value={value}

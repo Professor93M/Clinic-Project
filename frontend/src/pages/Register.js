@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Label from "../components/form/Label";
 import Input from "../components/form/Input";
 import Button from "../components/form/Button";
 import { postData } from "../utils/fetchData";
@@ -22,60 +21,65 @@ const Register = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     const res = await postData("register", user);
-    console.log(res, "oopppoo");
   };
   const { name, email, password, password_confirmation } = user;
 
   return (
-    <div className=" w-full flex-col flex items-center h-[80vh] bg-slate-900">
-      <div className="max-w-xl  text-center font-semibold text-5xl flex flex-col bg-slate-500">
-        <h1>Register</h1>
-        <form action="" className="mx-auto text-[1.5rem]">
-          <div className="mb-4">
-            <Label text="اسم المستخدم" elNme="name" />
-            <Input
-              name="name"
-              type="text"
-              handleChange={handleChange}
-              value={name}
-            />
+    <form>
+      <div className="flex items-center justify-center h-[500px]">
+        <div className="bg-white py-6 rounded-md px-10 max-w-lg shadow-md">
+          <h1 className="text-center text-lg font-bold capitalize text-gray-500">
+            register
+          </h1>
+          <div className="space-y-4 mt-6">
+            <div className="w-full">
+              <Input
+                name="name"
+                handleChange={handleChange}
+                value={name}
+                className="px-4 py-2 bg-gray-50 placeholder:capitalize"
+                placeholder="full name"
+              />
+            </div>
+            <div className="w-full">
+              <Input
+                name="email"
+                type="email"
+                handleChange={handleChange}
+                value={email}
+                className="px-4 py-2 bg-gray-50 placeholder:capitalize"
+                placeholder="email"
+              />
+            </div>
+            <div className="w-full">
+              <Input
+                name="password"
+                type="password"
+                handleChange={handleChange}
+                value={password}
+                className="px-4 py-2 bg-gray-50 placeholder:capitalize"
+                placeholder="password"
+              />
+            </div>
+            <div className="w-full">
+              <Input
+                name="password_confirmation"
+                type="password"
+                handleChange={handleChange}
+                value={password_confirmation}
+                className="px-4 py-2 bg-gray-50 placeholder:capitalize"
+                placeholder="password confirmation"
+              />
+            </div>
           </div>
-          <div className="mb-4">
-            <Label text="البريد الالكتروني" elNme="email" />
-            <Input
-              name="email"
-              type="email"
-              handleChange={handleChange}
-              value={email}
-            />
-          </div>
-          <div className="mb-4">
-            <Label text="الرمز السري" elNme="password" />
-            <Input
-              name="password"
-              type="password"
-              handleChange={handleChange}
-              value={password}
-            />
-          </div>
-          <div className="mb-4">
-            <Label
-              text="تأكيد كلمة السر"
-              className=""
-              elNme="password_confirmation"
-            />
-            <Input
-              name="password_confirmation"
-              value={password_confirmation}
-              type="password"
-              handleChange={handleChange}
-            />
-          </div>
-
-          <Button text="تسجيل" className="" handleClick={handleClick} />
-        </form>
+          <Button
+            text="register"
+            handleClick={handleClick}
+            className="w-full mt-5 capitalize bg-indigo-600 text-white py-2 rounded-md font-semibold tracking-tight"
+          />
+        </div>
       </div>
-    </div>
+    </form>
   );
 };
 
