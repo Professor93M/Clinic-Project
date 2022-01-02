@@ -20,7 +20,7 @@ const Login = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     const res = await postData("login", user);
-    console.log(res);
+    console.log(res, "oopk");
   };
   const { email, password } = user;
 

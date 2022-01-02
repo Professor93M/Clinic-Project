@@ -22,7 +22,7 @@ const Register = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     const res = await postData("register", user);
-    console.log(res);
+    console.log(res, "oopppoo");
   };
   const { name, email, password, password_confirmation } = user;
 

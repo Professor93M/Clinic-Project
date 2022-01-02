@@ -28,8 +28,9 @@ class AuthController extends Controller
         $response = [
             'user' => $user,
             'token' => $token,
+            
         ];
-        return response($response, 201);
+        return response($response);
     }
 
     public function login(Request $request) {
